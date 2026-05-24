@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://logixai-two.vercel.app/",
+    origin: "https://logixai-two.vercel.app",
     credentials: true,
   })
 );
