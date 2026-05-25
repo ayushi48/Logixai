@@ -45,6 +45,7 @@ exports.registerUser = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "none",
+        path: "/",
       maxAge: 30 * 60 * 1000,
     });
 
@@ -52,6 +53,7 @@ exports.registerUser = async (req, res) => {
       httpOnly: true,
       secure: true,
   sameSite: "none",
+        path: "/",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -79,6 +81,7 @@ exports.loginUser = async (req, res) => {
       httpOnly: true,
       secure: true,
 sameSite: "none",
+        path: "/",
       maxAge: 30 * 60 * 1000,
     });
 
@@ -86,6 +89,7 @@ sameSite: "none",
       httpOnly: true,
     secure: true,
 sameSite: "none",
+        path: "/",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -117,6 +121,7 @@ exports.refreshToken = async (req, res) => {
         httpOnly: true,
       secure: true,
 sameSite: "none",
+          path: "/",
         maxAge: 30 * 60 * 1000,
       });
 
@@ -139,12 +144,14 @@ res.clearCookie("accessToken", {
   httpOnly: true,
   secure: true,
   sameSite: "none",
+    path: "/",
 });
 
 res.clearCookie("refreshToken", {
   httpOnly: true,
   secure: true,
   sameSite: "none",
+    path: "/",
 });
  
 
