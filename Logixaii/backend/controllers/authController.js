@@ -43,15 +43,15 @@ exports.registerUser = async (req, res) => {
     // Send cookies
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 30 * 60 * 1000,
     });
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+  sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -77,15 +77,15 @@ exports.loginUser = async (req, res) => {
 
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+sameSite: "none",
       maxAge: 30 * 60 * 1000,
     });
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+    secure: true,
+sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -115,8 +115,8 @@ exports.refreshToken = async (req, res) => {
 
       res.cookie("accessToken", accessToken, {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+      secure: true,
+sameSite: "none",
         maxAge: 30 * 60 * 1000,
       });
 
@@ -135,9 +135,18 @@ exports.logoutUser = async (req, res) => {
 
     user.refreshToken = null;
     await user.save();
+res.clearCookie("accessToken", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+});
 
-    res.clearCookie("accessToken");
-    res.clearCookie("refreshToken");
+res.clearCookie("refreshToken", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+});
+ 
 
     res.json({ message: "Logged out successfully" });
   } catch (err) {
