@@ -1,53 +1,53 @@
 
-// const { GoogleGenerativeAI } = require("@google/generative-ai");
-// const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-// async function getAIResponse(prompt) {
-//   try {
-//     // If frontend sends JSON string → parse it
-//     let parsed = typeof prompt === "string" ? JSON.parse(prompt) : prompt;
-//      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-//      const result = await model.generateContent(parsed.messagetext);
-//      return result.response.text();
-//       } catch (err) {
-//     console.error("Gemini API Error:", err);
-//     return "⚠️ Error : Unable to fetch response from Gemini API.";
-//   }
-// }
-// module.exports = { getAIResponse };
-
-
-
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-
-const genAI = new GoogleGenerativeAI(
-  process.env.GEMINI_API_KEY
-);
-
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 async function getAIResponse(prompt) {
   try {
-    let parsed =
-      typeof prompt === "string"
-        ? JSON.parse(prompt)
-        : prompt;
-
-    if (!parsed?.messagetext?.trim()) {
-      return "Please enter a valid message.";
-    }
-
-    const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash",
-    });
-
-    const result = await model.generateContent(
-      parsed.messagetext
-    );
-
-    return result.response.text();
-  } catch (err) {
-    console.error("Gemini API Error:", err.message);
-
+    // If frontend sends JSON string → parse it
+    let parsed = typeof prompt === "string" ? JSON.parse(prompt) : prompt;
+     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+     const result = await model.generateContent(parsed.messagetext);
+     return result.response.text();
+      } catch (err) {
+    console.error("Gemini API Error:", err);
     return "⚠️ Error : Unable to fetch response from Gemini API.";
   }
 }
-
 module.exports = { getAIResponse };
+
+
+
+// const { GoogleGenerativeAI } = require("@google/generative-ai");
+
+// const genAI = new GoogleGenerativeAI(
+//   process.env.GEMINI_API_KEY
+// );
+
+// async function getAIResponse(prompt) {
+//   try {
+//     let parsed =
+//       typeof prompt === "string"
+//         ? JSON.parse(prompt)
+//         : prompt;
+
+//     if (!parsed?.messagetext?.trim()) {
+//       return "Please enter a valid message.";
+//     }
+
+//     const model = genAI.getGenerativeModel({
+//       model: "gemini-1.5-flash",
+//     });
+
+//     const result = await model.generateContent(
+//       parsed.messagetext
+//     );
+
+//     return result.response.text();
+//   } catch (err) {
+//     console.error("Gemini API Error:", err.message);
+
+//     return "⚠️ Error : Unable to fetch response from Gemini API.";
+//   }
+// }
+
+// module.exports = { getAIResponse };
