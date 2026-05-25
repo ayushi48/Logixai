@@ -9,18 +9,61 @@ function Login({ setUser }) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axiosClient.post("/auth/login", { email, password });
-      const res = await axiosClient.get("/auth/me"); // ✅ fetch user info
-      setUser(res.data);
-      navigate("/chat");
-    } catch (err) {
-      alert(err.response?.data?.message || "Login failed");
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axiosClient.post("/auth/login", { email, password });
+  //     const res = await axiosClient.get("/auth/me"); // ✅ fetch user info
+  //     setUser(res.data);
+  //     navigate("/chat");
+  //   } catch (err) {
+  //     alert(err.response?.data?.message || "Login failed");
+  //   }
+  // };
 
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    // Login request
+    const loginRes = await axiosClient.post(
+      "/auth/login",
+      {
+        email,
+        password,
+      }
+    );
+
+    // Check success
+    if (loginRes.data.success) {
+
+      // Wait a little for mobile browsers
+      await new Promise((resolve) =>
+        setTimeout(resolve, 300)
+      );
+
+      // Fetch authenticated user
+      const userRes = await axiosClient.get(
+        "/auth/me"
+      );
+
+      setUser(userRes.data);
+
+      navigate("/chat");
+    }
+
+  } catch (err) {
+    console.log(err);
+
+    alert(
+      err.response?.data?.message ||
+      "Login failed"
+    );
+  }
+};
+  
   return (
     <div className="h-screen flex items-center justify-center bg-gray-900 text-white">
       <form
