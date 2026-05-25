@@ -26,6 +26,7 @@ const convertRoute = require("./imgconverter/convertRoute");
 const app = express();
 
 // Middlewares
+app.set("trust proxy", 1);
 app.use(express.json({ limit: "50mb" }));   // ⬅️ VERY IMPORTANT for req.body
 app.use(cookieParser());
 
