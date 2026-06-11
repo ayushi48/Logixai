@@ -159,7 +159,7 @@ LogixAI
 git clone https://github.com/ayushi48/ai.git
 
 # 2. Navigate into the project
-cd ai
+cd Logixai
 
 # 3. Install dependencies
 npm install
