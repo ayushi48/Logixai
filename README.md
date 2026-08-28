@@ -313,28 +313,16 @@ npm run dev
 
 ## 👩‍💻 Author
 
-<div align="center">
+**Ayushi Kumari**
 
-<img src="https://img.shields.io/badge/Ayushi_Kumari-A855F7?style=for-the-badge&labelColor=EC4899&logoColor=white" />
+---
 
-*Full-Stack MERN Developer • AI Enthusiast • React Developer*
+**Full-Stack MERN Developer • AI Enthusiast • React Developer**
 
-<br/>
-
-<a href="https://github.com/ayushi48">
-  <img src="https://img.shields.io/badge/GitHub-6366F1?style=flat-square&logo=github&logoColor=white&labelColor=8B5CF6" />
-</a>
-<a href="https://www.linkedin.com/in/ayushi-kumari48/">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white&labelColor=EC4899" />
-</a>
-<a href="mailto:ayushikr2016@gmail.com">
-  <img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=A855F7" />
-</a>
-<a href="https://ayushikumari.me/">
-  <img src="https://img.shields.io/badge/Portfolio-6366F1?style=flat-square&logo=vercel&logoColor=white&labelColor=8B5CF6" />
-</a>
-
-</div>
+- 🌐 Portfolio: [ayushikumari.me](https://ayushikumari.me/)
+- 💻 GitHub: [github.com/ayushi48](https://github.com/ayushi48)
+- 💼 LinkedIn: [linkedin.com/in/ayushi-kumari48](https://www.linkedin.com/in/ayushi-kumari48/)
+- ✉️ Email: [ayushikr2016@gmail.com](mailto:ayushikr2016@gmail.com)
 
 <br/>
 
