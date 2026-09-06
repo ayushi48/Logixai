@@ -2,7 +2,7 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:A855F7,50:EC4899,100:6366F1&height=220&section=header&text=LogixAI&fontSize=64&fontColor=ffffff&fontAlignY=35&desc=All-in-One%20AI%20Productivity%20Platform&descAlignY=58&descSize=18&animation=fadeIn"/> 
 
-<br/>
+<br/> 
 
 <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=22&duration=3000&pause=1000&color=EC4899&center=true&vCenter=true&width=650&lines=Chat+%E2%80%A2+Build+%E2%80%A2+Convert+%E2%80%A2+Remove+Backgrounds;One+Platform%2C+Four+AI-Powered+Tools;Powered+by+Google+Gemini" alt="Typing SVG" />
 
